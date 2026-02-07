@@ -1,11 +1,59 @@
 #!/bin/bash
 
-# Startup script for AI Meme Generator
+# AI Meme Generator - Startup Script
 
-# Load environment variables
-if [ -f .env ]; then
-    export $(cat .env | grep -v '#' | xargs)
+echo "=========================================="
+echo "AI Meme Generator"
+echo "=========================================="
+echo ""
+
+# Check if virtual environment exists
+if [ ! -d "venv" ]; then
+    echo "⚠️  Virtual environment not found."
+    echo "Creating virtual environment..."
+    python3 -m venv venv
+    echo "✓ Virtual environment created"
+    echo ""
 fi
 
-# Start the FastAPI server
+# Activate virtual environment
+echo "Activating virtual environment..."
+source venv/bin/activate
+echo "✓ Virtual environment activated"
+echo ""
+
+# Check if .env exists
+if [ ! -f ".env" ]; then
+    echo "⚠️  .env file not found."
+    echo "Copying .env.example to .env..."
+    cp .env.example .env
+    echo "✓ .env file created"
+    echo ""
+    echo "⚠️  IMPORTANT: Edit .env and add your API keys!"
+    echo "   - OPENAI_API_KEY (required)"
+    echo "   - IMGFLIP_USERNAME (required)"
+    echo "   - IMGFLIP_PASSWORD (required)"
+    echo ""
+    exit 1
+fi
+
+# Install/update dependencies
+echo "Installing dependencies..."
+pip install -r requirements.txt > /dev/null 2>&1
+echo "✓ Dependencies installed"
+echo ""
+
+# Start the server
+echo "=========================================="
+echo "Starting FastAPI server..."
+echo "=========================================="
+echo ""
+echo "Server will be available at:"
+echo "  → http://localhost:8000"
+echo "  → API Docs: http://localhost:8000/docs"
+echo ""
+echo "Press CTRL+C to stop the server"
+echo ""
+
+# Run uvicorn
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
