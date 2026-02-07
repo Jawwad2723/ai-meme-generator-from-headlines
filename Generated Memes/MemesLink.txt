@@ -1,0 +1,45 @@
+2026-02-07 23:43:20,882 - app.main - INFO - Successfully scraped 6 headlines
+2026-02-07 23:43:20,882 - app.main - INFO - Step 2: Generating meme text with GPT-4...
+2026-02-07 23:43:20,939 - app.text_generator - INFO - Initialized MemeTextGenerator with model: gpt-4o-mini
+2026-02-07 23:43:20,940 - app.text_generator - INFO - Generating meme for headline: US wants Russia and Ukraine to end war by June, says Zelensk...
+2026-02-07 23:43:21,887 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 23:43:21,892 - app.text_generator - INFO - Generated meme: Change My Mind
+2026-02-07 23:43:21,893 - app.text_generator - INFO - Generating meme for headline: Alleged mastermind among four arrested after Pakistan mosque...
+2026-02-07 23:43:22,964 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 23:43:22,973 - app.text_generator - INFO - Generated meme: Woman Yelling At Cat
+2026-02-07 23:43:22,973 - app.text_generator - INFO - Generating meme for headline: Winter Olympics: Italy's Lollobrigida wins speed skating gol...
+2026-02-07 23:43:24,790 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 23:43:24,794 - app.text_generator - INFO - Generated meme: Distracted Boyfriend
+2026-02-07 23:43:24,794 - app.text_generator - INFO - Generating meme for headline: Italy says railways hit by 'serious sabotage' as Winter Olym...
+2026-02-07 23:43:26,225 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 23:43:26,243 - app.text_generator - INFO - Generated meme: Distracted Boyfriend
+2026-02-07 23:43:26,243 - app.text_generator - INFO - Generating meme for headline: Will Sunday's snap election gamble pay off for Japan's first...
+2026-02-07 23:43:27,604 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 23:43:27,619 - app.text_generator - INFO - Generated meme: Two Buttons
+2026-02-07 23:43:27,619 - app.text_generator - INFO - Generating meme for headline: General shot in Moscow conscious after surgery, Russian medi...
+2026-02-07 23:43:28,985 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 23:43:29,004 - app.text_generator - INFO - Generated meme: Success Kid
+2026-02-07 23:43:29,004 - app.main - INFO - Successfully generated 6 meme ideas
+2026-02-07 23:43:29,004 - app.main - INFO - Step 3: Creating meme images...
+2026-02-07 23:43:29,004 - app.meme_creator - INFO - Initialized MemeCreatorService with Imgflip
+2026-02-07 23:43:29,004 - app.meme_creator - INFO - Creating meme with template: Change My Mind (ID: 129242436)
+2026-02-07 23:43:30,031 - app.meme_creator - INFO - Meme created successfully: https://i.imgflip.com/ajj40l.jpg
+2026-02-07 23:43:30,034 - app.main - INFO - Created meme: Change My Mind
+2026-02-07 23:43:30,034 - app.meme_creator - INFO - Creating meme with template: Woman Yelling At Cat (ID: 188390779)
+2026-02-07 23:43:31,058 - app.meme_creator - INFO - Meme created successfully: https://i.imgflip.com/ajj40q.jpg
+2026-02-07 23:43:31,061 - app.main - INFO - Created meme: Woman Yelling At Cat
+2026-02-07 23:43:31,061 - app.meme_creator - INFO - Creating meme with template: Distracted Boyfriend (ID: 112126428)
+2026-02-07 23:43:31,998 - app.meme_creator - INFO - Meme created successfully: https://i.imgflip.com/ajj40s.jpg
+2026-02-07 23:43:32,001 - app.main - INFO - Created meme: Distracted Boyfriend
+2026-02-07 23:43:32,001 - app.meme_creator - INFO - Creating meme with template: Distracted Boyfriend (ID: 112126428)
+2026-02-07 23:43:33,343 - app.meme_creator - INFO - Meme created successfully: https://i.imgflip.com/ajj40w.jpg
+2026-02-07 23:43:33,346 - app.main - INFO - Created meme: Distracted Boyfriend
+2026-02-07 23:43:33,346 - app.meme_creator - INFO - Creating meme with template: Two Buttons (ID: 87743020)
+2026-02-07 23:43:34,935 - app.meme_creator - INFO - Meme created successfully: https://i.imgflip.com/ajj410.jpg
+2026-02-07 23:43:34,937 - app.main - INFO - Created meme: Two Buttons
+2026-02-07 23:43:34,937 - app.meme_creator - INFO - Creating meme with template: Success Kid (ID: 61544)
+2026-02-07 23:43:36,358 - app.meme_creator - INFO - Meme created successfully: https://i.imgflip.com/ajj415.jpg
+2026-02-07 23:43:36,361 - app.main - INFO - Created meme: Success Kid
+2026-02-07 23:43:36,361 - app.main - INFO - Successfully created 6 memes
+2026-02-07 23:43:36,361 - app.main - INFO - Pipeline completed successfully
+INFO:     127.0.0.1:54200 - "POST /generate-memes?num_memes=6 HTTP/1.1" 200 OK
